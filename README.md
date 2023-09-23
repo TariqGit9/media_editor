@@ -17,22 +17,22 @@ Media editor is a flask based project which contains alot of options to edit (vi
 ## Usage
 
 1. **OpenCV Example**
-    ![image of open cv exmaple 1](static/img/vid1.png){:height="200px" width="300px"}
-    ![image of open cv exmaple 2](static/img/vid2.png){:height="200px" width="300px"}
+    ![image of open cv exmaple 1](static/img/vid1.png)
+    ![image of open cv exmaple 2](static/img/vid2.png)
 
     - This webpage offers a variety of video editing options, including resizing, adding text, flipping, extracting frames, removing audio, and joining videos.
     - Upon clicking any button on the page, a Bootstrap modal will appear, presenting video upload options specific to the selected action. After inputting the necessary information, it will take some time to upload and process the video. Once processing is complete, a download button will be provided for the edited video.
     - As this part of the project is supposed to use opencv so it does not take care of the audio of the videos
 
 2. **Image Editor**
-    ![image of image editing exmaple 1](static/img/image1.png){:height="200px" width="300px"}
-    ![image of image editing exmaple 2](static/img/image2.png){:height="200px" width="300px"}
+    ![image of image editing exmaple 1](static/img/image1.png)
+    ![image of image editing exmaple 2](static/img/image2.png)
     -This webpage offers a variety of image editing options, including resizing, blue, contour, image detail,image sharpen, smooth and Black and white
     - Upon clicking any button on the page, a Bootstrap modal will appear, presenting image upload options specific to the selected action. After inputting the necessary information, it will take some time to upload and process the image. Once processing is complete, a download button will appear beneath the image view.
 
 3. **Speach Recognizer**
 
-    ![image of image editing exmaple 1](static/img/text.png){:height="200px" width="300px"}
+    ![image of image editing exmaple 1](static/img/text.png)
     
     -This webpage contains a choose file option (.wav file format)
     - Upon clicking on upload button it will take some time to upload and process the the audio. Once processing is complete it will populate the text in to the Text(textarea)

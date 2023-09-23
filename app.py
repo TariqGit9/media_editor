@@ -142,6 +142,7 @@ def upload_audio():
         return jsonify({'result': result})
     except Exception as e:
         return jsonify({'message': 'An error occurred', 'error': str(e)}), 500
+    
 
 # Run the Flask app if this file is the main program
 if __name__ == '__main__':

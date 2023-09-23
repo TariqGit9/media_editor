@@ -1,0 +1,65 @@
+{% extends 'template.html' %}
+{% block main %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Speech to text </h1>
+     
+    </div>
+
+    <!-- Content Row -->
+    <div class="row add-buttons">
+        <div class="col-12"> <!-- Set the width to 6 columns out of 12 -->
+            <div class="form-group">
+                <form id="upload-form" method="post"  enctype="multipart/form-data">
+                    <div class="mb-3 row ">
+                        <div class="row">
+                            <div class="col-10">
+                                <label for="recipient-name" class="col-form-label">WAV Audio File:</label>
+                                <input type="file" id="audio-file" name="audio" accept="audio/wav"  class="form-control" >
+                            </div>
+                            <div class="col-2">
+                                <label for="recipient-name" class="col-form-label">   </label>
+                                <button type="button" class="btn btn-primary upload-files mt-3" >Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <label for="customWidthTextArea">Text:</label>
+                <textarea class="form-control" disabled rows="4" id="customWidthTextArea"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="uploadmodal" tabindex="-1" role="dialog" aria-labelledby="unremovableModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h5 class="modal-title" id="unremovableModalLabel">Please wait </h5>
+                <div class="spinner-border text-primary spinner-loading" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block js %}
+
+<script src="static/custom_js/text-speach.js"></script>
+
+{% endblock %}

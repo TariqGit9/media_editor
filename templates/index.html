@@ -1,0 +1,107 @@
+{% extends 'template.html' %}
+{% block main %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">OpenCV Examples</h1>
+     
+    </div>
+
+    <!-- Content Row -->
+    <div class="row add-buttons">
+       
+    </div>
+
+
+
+    <div class="modal myuploadmodal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title  upload-title"></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="upload-form" method="post"  enctype="multipart/form-data">
+                    <div class="mb-3 d-none">
+                        <input type="text" class="form-control" name= 'function_name' id="function_name">
+                    </div>
+                    <div class="mb-3 text-option d-none">
+                        <label for="recipient-name" class="col-form-label">Videos Text:</label>
+                        <input type="text" class="form-control" name= 'video_text' id="video_text">
+                    </div>
+                    <div class="mb-3 text-option d-none">
+                        <label for="recipient-name" class="col-form-label">Choose Text Color:</label>
+                        <input type="text"  class="form-control"   name= 'colorPickerInput' id="colorPickerInput" />
+                    </div>
+                    <div class="row resize-option d-none">
+                        <div class="col">
+                          <input type="number" min= '10' value="50" class="form-control"  name="height"  id="vid-height" placeholder="Height">
+                        </div>
+                        <div class="col">
+                          <input type="number" min= '10' value="50" class="form-control" name="width" id="vid-width" placeholder="width">
+                        </div>
+                      </div>
+
+                    <div class="mb-3 files-option ">
+                        <label for="recipient-name" class="col-form-label">Videos:</label>
+                        <input type="file" name="files"  class="form-control" id="files-input" >
+                    </div>
+                    <!-- <div class="mb-3 file-option d-none">
+                        <label for="recipient-name" class="col-form-label">Videos:</label>
+                        <input type="file" name="file"  class="form-control" id="file-input" >
+                    </div> -->
+                    
+                    
+                </form>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger close-modal" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary upload-files" >Upload</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    <div class="modal fade bd-example-modal-sm" id="uploadmodal" tabindex="-1" role="dialog" aria-labelledby="unremovableModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="unremovableModalLabel">Uploading Please wait </h5>
+                    <div class="spinner-border text-primary spinner-loading" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="progress">
+                        <progress id="upload-progress" max="100" value="0"></progress>
+                        <span id="progress-label">0%</span>
+                    </div>
+                    <div class="download-button">
+
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger close-modal-progress d-none ctn-sm close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script src="static/custom_js/index.js"></script>
+
+{% endblock %}

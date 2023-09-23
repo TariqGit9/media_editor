@@ -1,0 +1,88 @@
+{% extends 'template.html' %}
+{% block main %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Image Editor</h1>
+     
+    </div>
+
+    <!-- Content Row -->
+    <div class="row add-buttons">
+       
+    </div>
+
+
+
+    <div class="modal myuploadmodal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title upload-title"></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="upload-form" method="post"  enctype="multipart/form-data">
+                    <div class="mb-3 d-none">
+                        <input type="text" class="form-control" name= 'function_name' id="function_name">
+                    </div>
+                    <div class="row resize-option d-none">
+                        <div class="col">
+                          <input type="number" min= '10' value="50" class="form-control"  name="height"  id="vid-height" placeholder="Height">
+                        </div>
+                        <div class="col">
+                          <input type="number" min= '10' value="50" class="form-control" name="width" id="vid-width" placeholder="width">
+                        </div>
+                    </div>
+                    <div class="mb-3 files-option ">
+                        <label for="recipient-name" class="col-form-label">Image:</label>
+                        <input type="file" id="image-file" name="image" accept="image/*"  class="form-control" >
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger close-modal" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary upload-files" >Upload</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+
+
+<div class="modal fade bd-example-modal-sm" id="uploadmodal" tabindex="-1" role="dialog" aria-labelledby="unremovableModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="unremovableModalLabel">Download File</h5>
+            </div>
+            <div class="modal-body text-center">
+                
+                <img src="" id="download-image" height='100' width='100' alt="image error">
+                <div class="download-button mt-2">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger close-modal-progress ctn-sm close-modal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+<script src="static/custom_js/image-view.js"></script>
+
+{% endblock %}

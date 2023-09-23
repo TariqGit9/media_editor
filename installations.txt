@@ -1,4 +1,4 @@
-pip install moviepy SpeechRecognition
+pip install moviepy
 pip install SpeechRecognition
 pip install opencv-python
 pip install Flask

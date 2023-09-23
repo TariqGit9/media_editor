@@ -175,6 +175,7 @@ def upload_image():
         return jsonify({'message': 'An error occurred', 'error': str(e)}), 500
 
 
+
 @app.route('/upload-audio', methods=['POST'])
 def upload_audio():
     try:

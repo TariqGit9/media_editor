@@ -1,4 +1,4 @@
-
+// genrate random colors for buttons 
 function getRandomDarkColor() {
     // Generate random values for red, green, and blue components
     var r = Math.floor(Math.random() * 128); // Keep it in the lower half of the color spectrum

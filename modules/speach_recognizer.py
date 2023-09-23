@@ -2,8 +2,10 @@ import speech_recognition as sr
 
 
 class SpeechRecognizer:
+    
     def __init__(self):
         pass
+
     def recognize_audio(self,audio_file):
         recognizer = sr.Recognizer()
 

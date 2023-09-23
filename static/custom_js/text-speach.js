@@ -16,7 +16,6 @@ $(document).on('click', '.upload-files', function() {
         alert('Please select an  file.');
         return;
     }
-
     formData.append('audio', audioFile);
 
     // Make an Axios POST request to your server

@@ -2,6 +2,7 @@
 var currentURL = window.location.href;
 currentURL = currentURL.replace('#','');
 
+
 $(document).ready(function() {
     // Initialize the color picker
     $("#colorPickerInput").spectrum({
@@ -21,32 +22,9 @@ $(document).ready(function() {
     });
 });
 
+//calling the function to get all the action buttons for the view
 get_action_buttons()
-function get_action_buttons(){
-    var url = currentURL+"get_buttons"
-    console.log(url)
-    axios.get(url, {
-    }).then(function(response) {
-        if(response.data.result != ""){
-            names= response.data.names
-            urls= response.data.urls
-            console.log(response.data.names.length)
-            
-            for(count = 0 ; count < names.length;count++){
-                data= names[count]
-                console.log(data.name)
-                input_model= data.input_model
-                html = '<div class="col-lg-4 mb-4"><div class="card action-buttons text-white shadow" input-modal="'+input_model+'"  data-name="'+data.name+'"  data-url="'+data.url+'"  id="button-'+count+'"><div class="card-body">';
-                html+=data.name+'</div></div></div>'
-                $('.add-buttons').append(html);
-                var $divElement = $("#button-"+count);
-                $divElement.css("background-color", getRandomDarkColor());
-            }
 
-
-        }
-    });
-}
 
 // onclick events
 
@@ -126,6 +104,8 @@ $(document).on('click', '.action-buttons', function() {
 
 // Functions
 
+// #removing old data from form modal
+
 function removeoldData(){
     $('#files-input').val('')
     $('#files-input').removeAttr('multiple');
@@ -133,6 +113,7 @@ function removeoldData(){
     $('.resize-option').addClass('d-none')
 }
 
+// Validation for uploading videos 
 
 function upload_validations(){
     var fileValue = $('#files-input').val();
@@ -156,4 +137,29 @@ function upload_validations(){
             $("#colorPickerInput").val('#000000')
         }
     }
+}
+
+//  get all the action buttons for the view
+function get_action_buttons(){
+    var url = currentURL+"get_buttons"
+    console.log(url)
+    axios.get(url, {
+    }).then(function(response) {
+        if(response.data.result != ""){
+            names= response.data.names
+            urls= response.data.urls
+            console.log(response.data.names.length)
+            
+            for(count = 0 ; count < names.length;count++){
+                data= names[count]
+                console.log(data.name)
+                input_model= data.input_model
+                html = '<div class="col-lg-4 mb-4"><div class="card action-buttons text-white shadow" input-modal="'+input_model+'"  data-name="'+data.name+'"  data-url="'+data.url+'"  id="button-'+count+'"><div class="card-body">';
+                html+=data.name+'</div></div></div>'
+                $('.add-buttons').append(html);
+                var $divElement = $("#button-"+count);
+                $divElement.css("background-color", getRandomDarkColor());
+            }
+        }
+    });
 }

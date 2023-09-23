@@ -1,11 +1,8 @@
+# python modules
 import cv2
-import numpy as np
 import shutil
-
 import os 
-import subprocess
 import time 
-
 import zipfile
 
 class VideoEditor:
@@ -169,20 +166,3 @@ class VideoEditor:
         except OSError as e:
             print(f'Error deleting folder: {e}')
         return zip_filename
-    
-# if __name__ == "__main__":
-#     editor = VideoEditor()
-#     # Example usage:
-#     input_video = 'video.mp4'
-
-#     # editor.extract_frames(input_video,'static/result/')#working
-#     editor.define_codec("XVID")
-    # editor.remove_audio("video.mp4") #wworking 
-#     # Example usage of the functions
-    # editor.resize_video("video.mp4", 100, 100) #wworking 
-
-    # editor.flip_video("video.mp4", 1) #working
-    # editor.add_text_to_video("video.mp4", "Hello, OpenCV!", (50, 50))#working
-    # input_videos = ["video.mp4", "video-2.mp4", "vid.mp4"]  # working
-    # editor.join_videos(input_videos)
-
